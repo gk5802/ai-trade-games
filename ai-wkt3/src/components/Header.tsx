@@ -313,6 +313,7 @@ const quotes = [
   "Try, Win, Code",
   "Fail, Win, Code",
   "Win, Win, Code",
+  // Add up to 100 quotes here
 ];
 
 export default function Header() {
@@ -327,15 +328,16 @@ export default function Header() {
 
   return (
     <header className="text-center py-6">
-      <Image
-        src="/header.jpg"
-              alt="Trading & Gaming"
-              height={100}
-              width={100}
-              priority
-        className="mx-auto w-full max-w-4xl rounded"
-      />
-      <h2 className="mt-4 text-2xl font-semibold">{quotes[index]}</h2>
+      <div className="justify-center w-full flex">
+        <Image
+          src="/games/poker.jpeg"
+          alt="Trading & Gaming"
+          height={100}
+          width={800}
+          priority
+        />
+      </div>
+      <h2 className="--primary-bg-color:var(--primary-bg-color) mt-4 text-2xl font-semibold">{quotes[index]}</h2>
     </header>
   );
 }

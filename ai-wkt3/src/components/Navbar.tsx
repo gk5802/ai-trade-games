@@ -1,62 +1,34 @@
 "use client";
+
 import { useState } from "react";
 
-const themes = [
-  "theme1",
-  "theme2",
-  "theme3",
-  "theme4",
-  "theme5",
-  "theme6",
-  "theme7",
-  "theme8",
-  "theme9",
-  "theme10",
-];
-const languages = [
-  "English",
-  "Hindi",
-  "Spanish",
-  "Chinese",
-  "Arabic",
-  "French",
-  "Russian",
-  "Japanese",
-  "German",
-  "Korean",
-];
-
 export default function Navbar() {
-  const [theme, setTheme] = useState("theme1");
-  const [language, setLanguage] = useState("English");
+  const [, setTheme] = useState("theme-1");
+  const [, setLang] = useState("en");
+
+  const handleThemeChange = (e: any) => {
+    setTheme(e.target.value);
+    document.body.dataset.theme = e.target.value;
+  };
 
   return (
-    <nav
-      className={`bg-${theme} text-white p-4 flex justify-between items-center`}
-    >
-      <h1 className="text-xl font-bold">AI Trade & Games</h1>
-      <div className="flex gap-4">
-        <select
-          value={theme}
-          onChange={(e) => setTheme(e.target.value)}
-          className="text-black px-2 py-1 rounded"
-        >
-          {themes.map((t) => (
-            <option key={t} value={t}>
-              {t}
+    <nav className="p-4 flex justify-between">
+      <div className="text-xl font-bold">wkt3</div>
+      <div className="flex gap-2">
+        <select onChange={handleThemeChange}>
+          {Array.from({ length: 10 }, (_, i) => (
+            <option key={i} value={`theme-${i + 1}`}>
+              Theme {i + 1}
             </option>
           ))}
         </select>
-        <select
-          value={language}
-          onChange={(e) => setLanguage(e.target.value)}
-          className="text-black px-2 py-1 rounded"
-        >
-          {languages.map((l) => (
-            <option key={l} value={l}>
-              {l}
-            </option>
-          ))}
+        <select onChange={(e) => setLang(e.target.value)}>
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="zh">中文</option>
+          {/* add all internet languages */}
         </select>
       </div>
     </nav>

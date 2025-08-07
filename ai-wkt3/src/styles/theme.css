@@ -1,0 +1,49 @@
+:root {
+  --theme-1: #0d9488;
+  --theme-2: #3b82f6;
+  --theme-3: #9333ea;
+  --theme-4: #f59e0b;
+  --theme-5: #ef4444;
+  --theme-6: #10b981;
+  --theme-7: #8b5cf6;
+  --theme-8: #f43f5e;
+  --theme-9: #6366f1;
+  --theme-10: #e11d48;
+}
+
+[data-theme="theme-1"] {
+  --primary: var(--theme-1);
+}
+[data-theme="theme-2"] {
+  --primary: var(--theme-2);
+}
+[data-theme="theme-3"] {
+  --primary: var(--theme-3);
+}
+[data-theme="theme-4"] {
+  --primary: var(--theme-4);
+}
+[data-theme="theme-5"] {
+  --primary: var(--theme-5);
+}
+[data-theme="theme-6"] {
+  --primary: var(--theme-6);
+}
+[data-theme="theme-7"] {
+  --primary: var(--theme-7);
+}
+[data-theme="theme-8"] {
+  --primary: var(--theme-8);
+}
+[data-theme="theme-9"] {
+  --primary: var(--theme-9);
+}
+[data-theme="theme-10"] {
+  --primary: var(--theme-10);
+}
+
+body {
+  color: #f1eeee;
+  background-color: var(--primary);
+  transition: all 0.3s ease-in-out;
+}
